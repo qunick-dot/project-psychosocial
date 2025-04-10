@@ -1,0 +1,139 @@
+.blog-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.blog-title {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.blog-title h1 {
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 15px;
+}
+
+.blog-title p {
+    color: #6c757d;
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.blog-post {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.blog-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-post:hover .blog-img img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    padding: 25px;
+}
+
+.blog-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #212529;
+}
+
+.blog-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.blog-meta .author {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.blog-meta .author img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+    object-fit: cover;
+}
+
+.blog-meta a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.blog-meta a:hover {
+    color: #0d6efd;
+}
+
+.blog-content p {
+    color: #6c757d;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.read-more {
+    display: inline-block;
+    color: #fff;
+    background-color: #0d6efd;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #0b5ed7;
+    color: #fff;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: #e9ecef;
+    color: #495057;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 8px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 767px) {
+    .blog-section {
+        padding: 50px 0;
+    }
+    
+    .blog-title {
+        margin-bottom: 30px;
+    }
+}
