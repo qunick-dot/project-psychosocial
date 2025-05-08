@@ -1,4 +1,5 @@
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 @include('layouts.navbar')
 @include('layouts.link')
 <section class="about-hero">
@@ -305,7 +306,7 @@
     </div>
 </section>
 <!-- Our Team Section -->
-<section class="our-team">
+{{-- <section class="our-team">
     <div class="container">
         <h2 class="section-title">Meet Our Team</h2>
         <div class="team-grid">
@@ -316,7 +317,7 @@
                 </div>
                 <h3 class="team-name">Rabina Shahi Khadka</h3>
                 <p class="team-role">Psychologist</p>
-            </div>
+            </div> --}}
 
             <!-- Team Member 2
             <div class="team-member">
@@ -380,7 +381,7 @@
     <div class="container">
         <h2 class="cta-title">Ready to Start Your Journey?</h2>
         <p class="cta-description">Contact us today to schedule a consultation and take the first step toward mental wellness.</p>
-        <a href="#contact" class="btn-cta">Get Started</a>
+        <a href="/appointment-book" class="btn-cta">Get Started</a>
     </div>
 </section>
 

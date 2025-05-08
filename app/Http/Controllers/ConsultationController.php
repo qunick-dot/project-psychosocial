@@ -23,7 +23,6 @@ class ConsultationController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
             'phone' => 'required|string|max:20',
-            'preferred_time' => 'required',
             'service' => 'required|exists:services,id',
             'preferred_date' => 'required|date|after:today',
             'consultant' => 'required|string',
@@ -51,27 +50,5 @@ class ConsultationController extends Controller
     {
         $consultations = Consultation::orderBy('id', 'asc')->get();
         return view('admin.dashboard', compact('consultations'));
-    }
-    public function updateStatus(Request $request, $id)
-    {
-        $request->validate([
-            'status' => 'required|string|in:Approved,Declined,Pending',
-        ]);
-
-        $consultation = Consultation::findOrFail($id);
-        $status = $request->input('status');
-        $consultation->status = $request->status;
-        $consultation->save();
-
-        // If it's an AJAX request, return JSON
-        if($request->ajax() || $request->wantsJson()) {
-            return response()->json([
-                'success' => true,
-                'message' => "Consultation status updated to {$request->status}"
-            ]);
-        }
-        Mail::to($consultation->email)->send(new ConsultationStatusMail($consultation, $status));
-
-        return redirect()->back()->with('success', "Consultation status updated to {$request->status}");
     }
 }
