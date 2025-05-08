@@ -51,316 +51,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --primary-color: #5C6AC4;
-            --secondary-color: #47B881;
-            --accent-color: #D4E2FC;
-            --text-color: #333333;
-            --light-gray: #F5F7FA;
-            --dark-gray: #425A70;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Lora', serif;
-            font-weight: 400;
-        }
-        
-        /* Hero Section */
-        .content-hero {
-            background-color: var(--light-gray);
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-title {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin-bottom: 2rem;
-            color: var(--dark-gray);
-        }
-        
-        .service-hero-image {
-            border-radius: 10px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            width: 500px;
-            height: 500px;
-        }
-        
-        /* Content Sections */
-        section {
-            padding: 5rem 0;
-        }
-        
-        section:nth-child(even) {
-            background-color: var(--light-gray);
-        }
-        
-        .section-title {
-            font-size: 2.25rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 1rem;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary-color);
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            color: var(--dark-gray);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .section-description {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        /* Approach Section */
-        .approach-list {
-            list-style: none;
-            padding: 0;
-            margin: 3rem 0;
-        }
-        
-        .approach-item {
-            display: flex;
-            margin-bottom: 2.5rem;
-            background-color: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .approach-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .approach-item-icon {
-            font-size: 2rem;
-            margin-right: 2rem;
-            color: var(--secondary-color);
-            background-color: var(--accent-color);
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .approach-item-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        
-        /* FAQ Section */
-        .faq-section {
-            background-color: white;
-        }
-        
-        .accordion-item {
-            border: none;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
-        
-        .accordion-button {
-            font-family: 'Lora', serif;
-            font-weight: 500;
-            font-size: 1.1rem;
-            padding: 1.25rem;
-            color: var(--primary-color);
-            background-color: white;
-        }
-        
-        .accordion-button:not(.collapsed) {
-            color: white;
-            background-color: var(--primary-color);
-        }
-        
-        .accordion-button:focus {
-            box-shadow: none;
-            border-color: rgba(0,0,0,.125);
-        }
-        
-        .accordion-body {
-            padding: 1.5rem;
-            background-color: var(--light-gray);
-        }
-        
-        /* Consultation Form */
-        .consultation-form-section {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 5rem 0;
-        }
-        
-        .consultation-form-section .section-title {
-            color: white;
-        }
-        
-        .consultation-form-section .section-title:after {
-            background-color: white;
-        }
-        
-        .consultation-form {
-            background-color: white;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text-color);
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        
-        button[type="submit"] {
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-            display: block;
-            width: 100%;
-        }
-        
-        button[type="submit"]:hover {
-            background-color: #3a9c6c;
-        }
-        
-        /* Related Services */
-        .related-services {
-            padding: 5rem 0;
-        }
-        
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
-        }
-        
-        .card-img-top {
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .card-body {
-            padding: 2rem !important;
-        }
-        
-        .card-title {
-            font-size: 1.3rem !important;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 0.5rem 1.5rem;
-            font-weight: 500;
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .content-hero {
-                padding: 5rem 0 3rem;
-            }
-            
-            .hero-title {
-                font-size: 2.25rem;
-            }
-            
-            .section-title {
-                font-size: 1rem;
-            }
-            
-            .approach-item {
-                flex-direction: column;
-                padding: 1.5rem;
-            }
-            
-            .approach-item-icon {
-                margin-right: 0;
-                margin-bottom: 1.5rem;
-            }
-            
-            .consultation-form {
-                padding: 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('user-assets/css/services-template.css') }}">
 </head>
 <body>
     @include('layouts.navbar')
@@ -375,366 +66,391 @@
         s0.parentNode.insertBefore(s1,s0);
         })();
         </script>
-    <div class="service-page">
-        <!-- Hero Section -->
-        <section class="content-hero">
-            <div class="container">
-                <div class="row align-items-center">
-                    <!-- Image on the left -->
-                    <div class="col-lg-6 mt-4 mt-lg-0 text-center">
-                        @if($service->image)
-                            <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}" class="service-hero-image">
-                        @endif
-                    </div>
-        
-                    <!-- Text content on the right -->
-                    <div class="col-lg-6">
-                        <h1 class="hero-title">{{ $service->title }}</h1>
-                        <p class="hero-subtitle">{{ $service->subtitle }}</p>
-                        <a href="#consultation" class="btn btn-lg" style="background-color: var(--secondary-color); color: white;">
-                            Get Started <i class="fas fa-arrow-right ms-2"></i>
-                        </a>
-                    </div>
+
+<section class="therapy-hero">
+    <div class="service-container">
+        <div class="therapy-card">
+            <!-- Left side content -->
+            <div class="therapy-content">
+                <div class="badge-wrapper">
+                    <span class="therapy-badge">Professional Care</span>
                 </div>
-            </div>
-        </section>
-        
-    
-        <!-- Content Section -->
-        <section class="services-content">
-            <div class="container">
-                <h2 class="section-title">Why It Matters</h2>
-                <div class="section-description">
-                    {!! $service->why_it_matters !!}
-                </div>
-            </div>
-        </section>
-    
-        <!-- Approach Section -->
-        @if(!empty($service->approach_items) && is_array($service->approach_items))
-        <section class="approach-section">
-            <div class="container">
-                <h2 class="section-title">{{ $service->approach_title ?? 'Our Approach' }}</h2>
-                @if(!empty($service->approach_subtitle))
-                <p class="section-subtitle">{{ $service->approach_subtitle }}</p>
-                @endif
                 
-                <div class="approach-content">
-                    <ul class="approach-list">
-                        @foreach($service->approach_items as $item)
-                        <li class="approach-item">
-                            <div class="approach-item-icon">
-                                <i class="{{ $item['icon'] ?? 'fas fa-heart' }}"></i>
-                            </div>
-                            <div class="approach-item-content">
-                                <h3>{{ $item['title'] }}</h3>
-                                <p>{{ $item['description'] }}</p>
-                            </div>
-                        </li>
-                        @endforeach
-                    </ul>
+                <h1 class="therapy-title">{{ $service->title }}</h1>
+                <p class="therapy-subtitle">{{ $service->subtitle }}</p>
+                
+                <div class="therapy-description">
+                    <p>Begin your journey to emotional wellness with personalized mental health support tailored to your unique needs.</p>
+                </div>
+                
+                <div class="credentials">
+                    <div class="credential-item">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span>Licensed Professionals</span>
+                    </div>
+                    <div class="credential-item">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        <span>Flexible Scheduling</span>
+                    </div>
+                </div>
+                
+                <div class="therapy-actions">
+                    <a href="/appointment-book" class="btn-primary">
+                        Book Consultation
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#approach" class="btn-outline">Learn Our Approach</a>
                 </div>
             </div>
-        </section>
-        @endif
-    
-        <!-- FAQ Section -->
-        @if(!empty($service->faqs) && is_array($service->faqs))
-        <section class="faq-section">
-            <div class="container">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <div class="accordion" id="faqAccordion">
-                    @foreach($service->faqs as $index => $faq)
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="heading{{ $index }}">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}" aria-expanded="false" aria-controls="collapse{{ $index }}">
-                                {{ $faq['question'] }}
-                            </button>
-                        </h3>
-                        <div id="collapse{{ $index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ $index }}" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                {!! $faq['answer'] !!}
-                            </div>
+            
+            <!-- Right side image -->
+            <div class="therapy-image-wrapper">
+                <div class="image-container">
+                    @if($service->image)
+                    <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}" class="therapy-image">
+                    @endif
+                    <div class="service-testimonial-card">
+                        <div class="stars">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
                         </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-        @endif
-    
-        {{-- <!-- Testimonials Section (New) -->
-        <section class="testimonials-section">
-            <div class="container">
-                <h2 class="section-title">What Our Clients Say</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow">
-                            <div class="card-body p-4">
-                                <div class="mb-3 text-warning">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="card-text fst-italic">"The therapy services have been life-changing. My therapist really listened and provided practical tools that I use daily."</p>
-                                <div class="d-flex align-items-center mt-4">
-                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                                        <span>JD</span>
-                                    </div>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0">Jane D.</h5>
-                                        <small class="text-muted">Client for 6 months</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow">
-                            <div class="card-body p-4">
-                                <div class="mb-3 text-warning">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="card-text fst-italic">"I was skeptical at first, but the personalized approach and caring environment made all the difference in my recovery journey."</p>
-                                <div class="d-flex align-items-center mt-4">
-                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                                        <span>MR</span>
-                                    </div>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0">Michael R.</h5>
-                                        <small class="text-muted">Client for 1 year</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 border-0 shadow">
-                            <div class="card-body p-4">
-                                <div class="mb-3 text-warning">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <p class="card-text fst-italic">"The counseling sessions provided me with a safe space to work through my anxiety. I've gained confidence and coping skills."</p>
-                                <div class="d-flex align-items-center mt-4">
-                                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                                        <span>SL</span>
-                                    </div>
-                                    <div class="ms-3">
-                                        <h5 class="mb-0">Sarah L.</h5>
-                                        <small class="text-muted">Client for 9 months</small>
-                                    </div>
-                                </div>
-                            </div>
+                        <p>"Absolutely amazing and professional staff that can handle any diagnosis and who actually want to help individuals from their hearts."</p>
+                        <div class="testimonial-author">
+                            <span class="author-initial">B</span>
+                            <span class="author-name">Babita Hamal</span>
                         </div>
                     </div>
                 </div>
+                <div class="pattern-dots"></div>
             </div>
-        </section>
-     --}}
-        <!-- Consultation Form -->
-       <section class="consultation-form-section" id="consultation">
-    <div class="container">
-        <div class="section-header text-center">
-            <span class="section-subtitle">Get in Touch</span>
-            <h2 class="section-title">Request a Consultation</h2>
-            <p class="section-description">Fill out the form below, and we'll get back to you shortly to schedule your consultation.</p>
-        </div>
-        <div class="card-body">
-            @if (session('success'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('success') }}
-                </div>
-            @endif
-
-        <div class="form-container">
-            <!-- Image on the Left -->
-            <div class="form-image">
-                <img src={{asset('user-assets/images/others/consultation-image.jpg')}} alt="Consultation Image">
-            </div>
-
-            <!-- Form on the Right -->
-            <form method="POST" action="{{ route('consultations.store') }}" class="consultation-form">
-                @csrf
-
-                <div class="form-group mb-3">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" 
-                        value="{{ old('name') }}" placeholder="Enter your full name" required>
-                    @error('name')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            
-                <div class="form-group mb-3">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" 
-                        value="{{ old('email') }}" placeholder="Enter your email address" required>
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            
-                <div class="form-group mb-3">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" class="form-control @error('phone') is-invalid @enderror" 
-                        value="{{ old('phone') }}" placeholder="Enter your phone number" required>
-                    @error('phone')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            
-                <div class="form-group mb-3">
-                    <label for="preferred_date">Preferred Consultation Date</label>
-                    <input type="date" id="preferred_date" name="preferred_date" class="form-control @error('preferred_date') is-invalid @enderror" 
-                        value="{{ old('preferred_date') }}" required>
-                    @error('preferred_date')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                    <div class="form-group mb-3">
-                        <label for="preferred_time">Preferred Consultation Time</label>
-                        <input type="time" id="preferred_time" name="preferred_time" class="form-control @error('preferred_time') is-invalid @enderror" 
-                            value="{{ old('preferred_time') }}" required>
-                        @error('preferred_time')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                </div>
-
-                <div class="form-group mb-3">
-                    <label for="service">Select a Service</label>
-                    <select id="service" name="service" class="form-control @error('service') is-invalid @enderror" required>
-                        <option value="">Select a Service</option>
-                        @foreach($services as $service)
-                            <option value="{{ $service->id }}" {{ old('service') == $service->id ? 'selected' : '' }}>{{ $service->title }}</option>
-                        @endforeach
-                       
-                    </select>
-                    @error('service')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-            
-                <div class="form-group mb-3">
-                    <label for="consultant">Choose a Consultant</label>
-                    <select id="consultant" name="consultant" class="form-control @error('consultant') is-invalid @enderror" required>
-                        <option value="">Select a Consultant</option>
-                        <option value="john_doe" {{ old('consultant') == 'john_doe' ? 'selected' : '' }}>John Doe</option>
-                        <option value="sarah_smith" {{ old('consultant') == 'sarah_smith' ? 'selected' : '' }}>Sarah Smith</option>
-                        <option value="michael_brown" {{ old('consultant') == 'michael_brown' ? 'selected' : '' }}>Michael Brown</option>
-                    </select>
-                    @error('consultant')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            
-                <div class="form-group mb-3">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" class="form-control @error('message') is-invalid @enderror" 
-                        rows="5" placeholder="Tell us about your needs" required>{{ old('message') }}</textarea>
-                    @error('message')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Submit Request</button>
-                </div>
-            </form>
-            
         </div>
     </div>
 </section>
-        <!-- Related Services with Improved Card Design -->
-        <section class="related-services">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-12 text-center">
-                        <h2 class="section-title">Other Services You Might Be Interested In</h2>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    @foreach(\App\Models\Service::where('id', '!=', $service->id)->where('is_active', true)->take(3)->get() as $relatedService)
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="card h-100 shadow border-0">
-                            @if($relatedService->image)
-                                <img src="{{ asset('storage/' . $relatedService->image) }}" alt="{{ $relatedService->title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
-                            @endif
-                            <div class="card-body p-4">
-                                <h3 class="card-title h5 mb-3">{{ $relatedService->title }}</h3>
-                                <p class="card-text text-muted mb-4">{{ Str::limit($relatedService->subtitle ?? '', 100) }}</p>
-                                <a href="{{ route('services.show', $relatedService->slug) }}" class="btn btn-outline-primary">
-                                    Learn More <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-        
-        <!-- Trust Indicators Section (New) -->
-        <section class="trust-indicators" style="background-color: var(--light-gray);">
-            <div class="container">
-                <h2 class="section-title">Why Trust Us</h2>
-                <div class="row text-center">
-                    <div class="col-md-4 mb-4 mb-md-0">
-                        <div class="trust-item">
-                            <div class="icon-wrapper mb-3">
-                                <i class="fas fa-certificate fa-3x" style="color: var(--primary-color);"></i>
-                            </div>
-                            <h3 class="h5 mb-3">Licensed Professionals</h3>
-                            <p>Our team consists of certified therapists with years of experience and specialized training.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4 mb-md-0">
-                        <div class="trust-item">
-                            <div class="icon-wrapper mb-3">
-                                <i class="fas fa-shield-alt fa-3x" style="color: var(--primary-color);"></i>
-                            </div>
-                            <h3 class="h5 mb-3">Confidential & Secure</h3>
-                            <p>We prioritize your privacy with confidential sessions and secure information handling.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="trust-item">
-                            <div class="icon-wrapper mb-3">
-                                <i class="fas fa-heart fa-3x" style="color: var(--primary-color);"></i>
-                            </div>
-                            <h3 class="h5 mb-3">Personalized Care</h3>
-                            <p>We develop individualized treatment plans tailored to your unique needs and goals.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
 
+<!-- Why It Matters Section -->
+<section class="why-matters-section" id="why">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-tag">Benefits</span>
+            <h2>Why It Matters</h2>
+            <div class="heading-underline"></div>
+        </div>
+        
+        <div class="content-wrapper">
+            <div class="matters-content">
+                {!! $service->why_it_matters !!}
+            </div>
+            <div class="matters-visual">
+                <div class="visual-card">
+                    <div class="stat-number">94<span>%</span></div>
+                    <p>of our clients report significant improvement after 6 sessions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Our Approach Section -->
+@if(!empty($service->approach_items) && is_array($service->approach_items))
+<section class="approach-section" id="approach">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-tag">Methodology</span>
+            <h2>{{ $service->approach_title ?? 'Our Approach' }}</h2>
+            <div class="heading-underline"></div>
+        </div>
+        
+        <div class="approach-cards">
+            @foreach($service->approach_items as $index => $item)
+            <div class="approach-card">
+                <div class="approach-number">{{ $index + 1 }}</div>
+                <div class="approach-content">
+                    <h3>{{ $item['title'] }}</h3>
+                    <p>{{ $item['description'] }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
+<!-- FAQ Section -->
+@if(!empty($service->faqs) && is_array($service->faqs))
+<section class="faq-section" id="faq">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-tag">Questions</span>
+            <h2>Frequently Asked Questions</h2>
+            <div class="heading-underline"></div>
+        </div>
+        
+        <div class="faq-container">
+            @foreach($service->faqs as $index => $faq)
+            <div class="faq-item">
+                <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer{{ $index }}">
+                    <h3>{{ $faq['question'] }}</h3>
+                    <div class="faq-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer collapse" id="faqAnswer{{ $index }}">
+                    <div class="faq-answer-content">
+                        {!! $faq['answer'] !!}
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
+{{-- <!-- Consultation Form Section -->
+<section class="service-consultation-section" id="consultation">
+    <div class="container">
+        <div class="section-heading text-center">
+            <span class="section-tag">Get Started</span>
+            <h2>Book Your Consultation</h2>
+            <div class="heading-underline centered"></div>
+            <p class="section-intro">Take the first step toward emotional well-being today. Our experts are ready to help you on your journey.</p>
+        </div>
+        
+        <div class="service-consultation-wrapper">
+            <div class="service-consultation-image">
+                <img src="{{ asset('user-assets/images/others/consultation-image.jpg') }}" alt="Consultation">
+                <div class="image-overlay"></div>
+                <div class="service-consultation-features">
+                    <div class="feature-item">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Confidential Sessions</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Personalized Treatment</span>
+                    </div>
+                    <div class="feature-item">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" fill="none">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Flexible Scheduling</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-consultation-form-container">
+                @if (session('success'))
+                <div class="success-alert">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" fill="none">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>{{ session('success') }}</span>
+                </div>
+                @endif
+                
+                <form method="POST" action="{{ route('consultations.store') }}" class="consultation-form">
+                    @csrf
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" value="{{ old('name') }}" required>
+                            @error('name')
+                            <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Your email" value="{{ old('email') }}" required>
+                            @error('email')
+                            <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Your phone number" value="{{ old('phone') }}" required>
+                            @error('phone')
+                            <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Select Service</label>
+                            <select id="service" name="service" required>
+                                <option value="">Choose a service</option>
+                                @foreach($services as $service)
+                                <option value="{{ $service->id }}" {{ old('service') == $service->id ? 'selected' : '' }}>{{ $service->title }}</option>
+                                @endforeach
+                            </select>
+                            @error('service')
+                            <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="preferred_date">Preferred Date</label>
+                            <input type="date" id="preferred_date" name="preferred_date" value="{{ old('preferred_date') }}" required>
+                            @error('preferred_date')
+                            <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferred_time">Preferred Time</label>
+                            <input type="time" id="preferred_time" name="preferred_time" value="{{ old('preferred_time') }}" required>
+                            @error('preferred_time')
+                            <span class="error-message">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="consultant">Choose a Therapist</label>
+                        <select id="consultant" name="consultant" required>
+                            <option value="">Select a therapist</option>
+                            <option value="john_doe" {{ old('consultant') == 'john_doe' ? 'selected' : '' }}>Dr. John Doe</option>
+                            <option value="sarah_smith" {{ old('consultant') == 'sarah_smith' ? 'selected' : '' }}>Dr. Sarah Smith</option>
+                            <option value="michael_brown" {{ old('consultant') == 'michael_brown' ? 'selected' : '' }}>Dr. Michael Brown</option>
+                        </select>
+                        @error('consultant')
+                        <span class="error-message">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your needs">{{ old('message') }}</textarea>
+                        @error('message')
+                        <span class="error-message">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Schedule Consultation
+                        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section> --}}
+
+<!-- Related Services Section -->
+<section class="related-services-section">
+    <div class="container">
+        <div class="section-heading text-center">
+            <span class="section-tag">Explore More</span>
+            <h2>Other Services You Might Need</h2>
+            <div class="heading-underline centered"></div>
+        </div>
+        
+        <div class="services-grid">
+            @foreach(\App\Models\Service::where('id', '!=', $service->id)->where('is_active', true)->take(3)->get() as $relatedService)
+            <div class="service-card">
+                <div class="service-image">
+                    @if($relatedService->image)
+                    <img src="{{ asset('storage/' . $relatedService->image) }}" alt="{{ $relatedService->title }}">
+                    @endif
+                    <div class="service-overlay"></div>
+                </div>
+                <div class="service-content">
+                    <h3>{{ $relatedService->title }}</h3>
+                    <p>{{ Str::limit($relatedService->subtitle ?? '', 100) }}</p>
+                    <a href="{{ route('services.show', $relatedService->slug) }}" class="service-link">
+                        Learn More
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<!-- Trust Section -->
+<section class="trust-section">
+    <div class="container">
+        <div class="section-heading text-center">
+            <span class="section-tag">Our Promise</span>
+            <h2>Why Choose Us</h2>
+            <div class="heading-underline centered"></div>
+        </div>
+        
+        <div class="trust-cards">
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none">
+                        <path d="M20 7h-9m9 6h-9m9 6H5M5 7l2 2 4-4"/>
+                    </svg>
+                </div>
+                <h3>Evidence-Based Approaches</h3>
+                <p>Our therapeutic methods are grounded in scientific research and proven clinical outcomes.</p>
+            </div>
+            
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                </div>
+                <h3>Licensed Professionals</h3>
+                <p>All our therapists are fully certified with specialized training and extensive experience.</p>
+            </div>
+            
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" fill="none">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </div>
+                <h3>Complete Confidentiality</h3>
+                <p>Your privacy is our priority. All sessions and information are strictly confidential.</p>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>

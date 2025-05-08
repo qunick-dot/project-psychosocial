@@ -20,10 +20,10 @@
       <div class="sidebar-menu">
         <ul>
           <li><a href="/admin/dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-          <li><a href="{{ route('admin.services.index') }}"><i class="fas fa-cogs"></i> Services</a></li>
-          <li><a href=""><i class="fas fa-users"></i> Users</a></li>
-          <li><a href="#reviews"><i class="fas fa-star"></i> Reviews</a></li>
-          <li><a href="{{route('admin.blog.index')}}"><i class="fas fa-blog"></i> Blog Posts</a></li>
+          <li><a href="{{ route('admin.services.index') }}"><i class="fas fa-cogs"></i> Service Management</a></li>
+          <li><a href="{{ route('admin.counselors.index') }}"><i class="fas fa-users"></i> Team Management</a></li>
+          <li><a href="{{ route('admin.reviews.index')}}"><i class="fas fa-star"></i> Review Management</a></li>
+          <li><a href="{{route("admin.blogs.index")}}"><i class="fas fa-blog"></i> Blog Posts</a></li>
           <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
           <li><a href="#logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
@@ -101,6 +101,8 @@
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Date</th>
+                        <th>Time</th>
+                        <th>Service</th>
                         <th>Consultant</th>
                         <th>Status</th>
                         <th>Actions</th>
@@ -114,6 +116,9 @@
                           <td>{{ $consultation->name }}</td>
                           <td>{{ $consultation->email }}</td>
                           <td>{{ $consultation->phone }}</td>
+                          <td>{{ $consultation->service}}</td>
+                          <td>{{ $consultation->preferred_date}}</td>
+                          <td>{{ $consultation->preferred_time}}</td>
                           <td>{{ $consultation->preferred_date->format('F d, Y') }}</td>
                           <td>{{ $consultation->consultant }}</td>
                           <td>

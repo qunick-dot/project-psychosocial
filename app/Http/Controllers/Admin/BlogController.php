@@ -3,105 +3,145 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Blog;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use App\Models\Blog;
+use App\Models\Category;
+use App\Models\Tag;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
     public function index()
     {
-        $posts = Blog::latest()->paginate(10);
-        return view('admin.blog.index', compact('posts'));
+        $blogs = Blog::with(['category', 'user', 'tags'])
+            ->latest()
+            ->paginate(10);
+            
+        return view('admin.blogs.index', compact('blogs'));
     }
 
     public function create()
     {
-        return view('admin.blog.create');
+        $categories = Category::all();
+        $tags = Tag::all();
+        
+        return view('admin.blogs.create', compact('categories', 'tags'));
     }
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|max:255',
-            'category' => 'required|max:50',
-            'excerpt' => 'required',
-            'content' => 'required',
-            'image' => 'nullable|image|max:10000',
-            'published' => 'boolean',
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'category_id' => 'required|exists:categories,id',
+            'tags' => 'nullable|array',
+            'tags.*' => 'exists:tags,id',
+            'status' => 'required|in:draft,published',
         ]);
 
-        $validated['slug'] = Str::slug($validated['title']);
-        
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('blog', 'public');
-            $validated['image'] = $path;
-        }
-        
-        if ($request->has('published') && $request->published) {
-            $validated['published_at'] = now();
+        $data = [
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'content' => $request->content,
+            'category_id' => $request->category_id,
+            'user_id' => Auth::guard('admin')->id(),
+            'status' => $request->status,
+        ];
+
+        if ($request->status === 'published') {
+            $data['published_at'] = now();
         }
 
-        Blog::create($validated);
+        if ($request->hasFile('featured_image')) {
+            $path = $request->file('featured_image')->store('blogs', 'public');
+            $data['featured_image'] = $path;
+        }
 
-        return redirect()->route('admin.blog.index')
-            ->with('success', 'Blog post created successfully.');
+        $blog = Blog::create($data);
+
+        if ($request->has('tags')) {
+            $blog->tags()->attach($request->tags);
+        }
+
+        return redirect()->route('admin.blogs.index')
+            ->with('success', 'Blog created successfully.');
     }
 
-    public function edit(Blog $post)
+    public function show(Blog $blog)
     {
-        return view('admin.blog.edit', compact('post'));
+        $blog->load(['category', 'user', 'tags']);
+        return view('admin.blogs.show', compact('blog'));
     }
 
-    public function update(Request $request, Blog $post)
+    public function edit(Blog $blog)
     {
-        $validated = $request->validate([
-            'title' => 'required|max:255',
-            'category' => 'required|max:50',
-            'excerpt' => 'required',
-            'content' => 'required',
-            'image' => 'nullable|image|max:2048',
-            'published' => 'boolean',
+        $categories = Category::all();
+        $tags = Tag::all();
+        $blog->load('tags');
+        
+        return view('admin.blogs.edit', compact('blog', 'categories', 'tags'));
+    }
+
+    public function update(Request $request, Blog $blog)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'featured_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'category_id' => 'required|exists:categories,id',
+            'tags' => 'nullable|array',
+            'tags.*' => 'exists:tags,id',
+            'status' => 'required|in:draft,published',
         ]);
 
-        $validated['slug'] = Str::slug($validated['title']);
-        
-        if ($request->hasFile('image')) {
-            // Delete old image
-            if ($post->image) {
-                Storage::disk('public')->delete($post->image);
+        $data = [
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'content' => $request->content,
+            'category_id' => $request->category_id,
+            'status' => $request->status,
+        ];
+
+        if ($request->status === 'published' && !$blog->published_at) {
+            $data['published_at'] = now();
+        }
+
+        if ($request->hasFile('featured_image')) {
+            // Delete old image if exists
+            if ($blog->featured_image) {
+                Storage::disk('public')->delete($blog->featured_image);
             }
             
-            $path = $request->file('image')->store('blog', 'public');
-            $validated['image'] = $path;
-        }
-        
-        // If we're publishing now and it wasn't published before
-        if ($request->has('published') && $request->published && !$post->published) {
-            $validated['published_at'] = now();
-        }
-        
-        // If we're unpublishing
-        if (!$request->has('published') || !$request->published) {
-            $validated['published_at'] = null;
+            $path = $request->file('featured_image')->store('blogs', 'public');
+            $data['featured_image'] = $path;
         }
 
-        $post->update($validated);
+        $blog->update($data);
 
-        return redirect()->route('admin.blog.index')
-            ->with('success', 'Blog post updated successfully.');
+        // Sync tags
+        if ($request->has('tags')) {
+            $blog->tags()->sync($request->tags);
+        } else {
+            $blog->tags()->detach();
+        }
+
+        return redirect()->route('admin.blogs.index')
+            ->with('success', 'Blog updated successfully.');
     }
 
-    public function destroy(Blog $post)
+    public function destroy(Blog $blog)
     {
-        if ($post->image) {
-            Storage::disk('public')->delete($post->image);
+        // Delete featured image if exists
+        if ($blog->featured_image) {
+            Storage::disk('public')->delete($blog->featured_image);
         }
         
-        $post->delete();
+        $blog->delete();
 
-        return redirect()->route('admin.blog.index')
-            ->with('success', 'Blog post deleted successfully.');
+        return redirect()->route('admin.blogs.index')
+            ->with('success', 'Blog deleted successfully.');
     }
 }

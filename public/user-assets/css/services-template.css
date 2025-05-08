@@ -1,0 +1,888 @@
+:root {
+    --primary: #5b6bb9;
+    --primary-dark: #4a569e;
+    --primary-light: #eef0f9;
+    --accent: #f3785e;
+    --text-dark: #2d3748;
+    --text-medium: #4a5568;
+    --text-light: #718096;
+    --white: #ffffff;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --radius-sm: 0.25rem;
+    --radius: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Section Heading Styles */
+.section-heading {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.section-heading h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.heading-underline {
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.heading-underline.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-intro {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    color: var(--text-medium);
+}
+
+/* Hero Section Styles */
+.therapy-hero {
+    padding: 2rem;
+    background-color: var(--gray-50);
+    overflow: hidden;
+}
+
+.therapy-card {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: var(--radius-lg);
+    background-color: var(--white);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.therapy-content {
+    flex: 1;
+    min-width: 320px;
+    padding: 3.5rem;
+    position: relative;
+}
+
+.therapy-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.therapy-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.therapy-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-medium);
+    margin-bottom: 1.5rem;
+}
+
+.therapy-description {
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.credential-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-medium);
+}
+
+.credential-item svg {
+    color: var(--primary);
+}
+
+.therapy-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-primary, .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.btn-outline {
+    border: 1px solid var(--gray-300);
+    color: var(--text-medium);
+}
+
+.btn-outline:hover {
+    background-color: var(--gray-100);
+    color: var(--text-dark);
+}
+
+/* Image area styles */
+.therapy-image-wrapper {
+    flex: 1;
+    min-width: 320px;
+    position: relative;
+}
+
+.image-container {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.therapy-image {
+    width: 100%;
+    /* height: 50%; */
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    opacity: 0.8;
+    padding: 1rem;
+}
+
+.therapy-card:hover .therapy-image {
+    transform: scale(1.05);
+}
+
+.service-testimonial-card {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    max-width: 280px;
+    background-color: var(--white);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-md);
+}
+
+.stars {
+    display: flex;
+    gap: 0.25rem;
+    color: #FFB800;
+    margin-bottom: 0.75rem;
+}
+
+.service-testimonial-card p {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.author-initial {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.pattern-dots {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 6rem;
+    height: 6rem;
+    background-image: radial-gradient(var(--gray-300) 1px, transparent 1px);
+    background-size: 10px 10px;
+    z-index: 1;
+}
+
+/* Why Matters Section */
+.why-matters-section {
+    padding: 6rem 0;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+}
+
+.matters-content {
+    flex: 2;
+    min-width: 320px;
+}
+
+.matters-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.matters-content p {
+    color: var(--text-medium);
+    margin-bottom: 1.5rem;
+}
+
+.matters-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.matters-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-medium);
+}
+
+.matters-visual {
+    flex: 1;
+    min-width: 280px;
+}
+
+.visual-card {
+    background-color: var(--primary-light);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.stat-number span {
+    font-size: 2rem;
+}
+
+.visual-card p {
+    color: var(--text-medium);
+    font-size: 1.125rem;
+}
+
+/* Approach Section */
+.approach-section {
+    padding: 6rem 0;
+    background-color: var(--gray-50);
+}
+
+.approach-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.approach-card {
+    display: flex;
+    gap: 1.25rem;
+    background-color: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.approach-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.approach-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.approach-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+/* Approach Section Content Styles */
+.approach-content p {
+    color: var(--text-body);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 6rem 0;
+    background-color: var(--white);
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--gray-200);
+    margin-bottom: 1rem;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    cursor: pointer;
+}
+
+.faq-question h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.faq-icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-item .collapsed .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding-bottom: 1.5rem;
+}
+
+.faq-answer-content {
+    color: var(--text-body);
+    line-height: 1.6;
+}
+
+/* Consultation Section */
+.service-consultation-section {
+    padding: 6rem 0;
+    background-color: var(--gray-50);
+}
+
+.section-intro {
+    max-width: 700px;
+    margin: 1.5rem auto 3rem;
+    color: var(--text-body);
+    line-height: 1.6;
+}
+
+.service-consultation-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.service-consultation-image {
+    position: relative;
+    height: 100%;
+}
+
+.service-consultation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+}
+
+.service-consultation-features {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.feature-item svg {
+    stroke-width: 2;
+}
+
+.service-consultation-form-container {
+    padding: 2.5rem;
+}
+
+.success-alert {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--success-light);
+    color: var(--success);
+    padding: 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+}
+
+.success-alert svg {
+    stroke-width: 2;
+}
+
+.service-consultation-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+    background-color: var(--white);
+    color: var(--text-dark);
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.error-message {
+    display: block;
+    color: var(--error);
+    font-size: 0.875rem;
+    margin-top: 0.375rem;
+}
+
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    padding: 1rem 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Related Services Section */
+.related-services-section {
+    padding: 6rem 0;
+    background-color: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.service-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
+}
+
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+
+.service-content {
+    padding: 1.5rem;
+    background-color: var(--white);
+}
+
+.service-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.service-content p {
+    color: var(--text-body);
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+}
+
+.service-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.service-link:hover {
+    color: var(--primary-dark);
+}
+
+/* Trust Section */
+.trust-section {
+    padding: 6rem 0;
+    background-color: var(--gray-50);
+}
+
+.trust-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.trust-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trust-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.trust-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1.5rem;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-radius: 50%;
+}
+
+.trust-icon svg {
+    stroke-width: 2;
+}
+
+.trust-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.trust-card p {
+    color: var(--text-body);
+    line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+    .therapy-card {
+        margin: 0 1.5rem;
+    }
+    
+    .therapy-title {
+        font-size: 2.25rem;
+    }
+    
+    .service-testimonial-card {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 992px) {
+    .therapy-hero {
+        padding: 5rem 0 4rem;
+    }
+    
+    .therapy-content {
+        padding: 2.5rem;
+    }
+    
+    .therapy-title {
+        font-size: 2rem;
+    }
+    
+    .pattern-dots {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .therapy-card {
+        flex-direction: column;
+    }
+    
+    .therapy-content {
+        order: 2;
+        width: 100%;
+    }
+    
+    .therapy-image-wrapper {
+        order: 1;
+        width: 100%;
+        height: 350px;
+    }
+    
+    .therapy-title {
+        font-size: 1.75rem;
+    }
+    
+    .therapy-subtitle {
+        font-size: 1rem;
+    }
+    
+    .service-testimonial-card {
+        bottom: 1rem;
+        right: 1rem;
+        max-width: 220px;
+        padding: 1rem;
+    }
+    
+    .pattern-dots {
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    .therapy-actions {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-outline {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .therapy-hero {
+        padding: 4rem 0 3rem;
+    }
+    
+    .therapy-card {
+        margin: 0 1rem;
+    }
+    
+    .therapy-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .therapy-image-wrapper {
+        height: 280px;
+    }
+    
+    .therapy-title {
+        font-size: 1.5rem;
+    }
+    
+    .therapy-badge {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .credentials {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .service-testimonial-card {
+        bottom: 0.75rem;
+        right: 0.75rem;
+        max-width: 200px;
+        padding: 0.75rem;
+    }
+    
+    .service-testimonial-card p {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stars svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .author-initial {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .author-name {
+        font-size: 0.75rem;
+    }
+}
+
+/* Additional layout container styles */
+.service-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+    }
+}

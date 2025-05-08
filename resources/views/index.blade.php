@@ -3,10 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Psychosocial Counseling Services | Mental Health & Therapy in Nepal</title>
+    <meta name="description" content="Professional psychosocial counseling & mental health services in Nepal. Offering therapy for anxiety, depression, trauma, and relationship issues. Book your confidential session today.">
+    <meta name="keywords" content="psychotherapy Nepal, mental health counseling, Kathmandu therapist, anxiety treatment, depression help, trauma therapy, relationship counseling, psychosocial support Nepal, online therapy Nepal">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Psychosocial Counseling Services | Mental Health & Therapy in Nepal">
+    <meta property="og:description" content="Professional counseling services for mental wellness in Nepal. Confidential therapy for individuals and couples.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://psychoresearch.com">
+    <meta property="og:image" content="https://psychoresearch.com/user-assets/images/logo/psychosocial_counselling_logo.jpg">
+    <meta property="og:site_name" content="Psychosocial Counselling Services">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Psychosocial Counseling Services | Mental Health & Therapy in Nepal">
+    <meta name="twitter:description" content="Professional mental health counseling and psychotherapy services in Kathmandu, Nepal.">
+    <meta name="twitter:image" content="https://psychoresearch.com/user-assets/images/logo/psychosocial_counselling_logo.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://psychoresearch.com">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://psychoresearch.com/favicon.ico" type="image/x-icon">
+
+    <!-- Additional Helpful Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Psychosocial Counselling Services">
+    <meta name="geo.region" content="NP">
+    <meta name="geo.placename" content="Kathmandu">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <title>Psychosocial Counseling Services</title>
+    <meta name="google-site-verification" content="HmD7GoFw-5nW7WihbcMNTbp-hj6npzEAxjOs9x8XLm8" />
 
 </head>
 <body>
@@ -15,24 +43,71 @@
 
 @include('layouts.navbar')
 @include('layouts.link')
-    
-<section class="hero">
-    <div class="hero-container">
-       
-        <div class="hero-overlay"></div>
-        <div class="hero-image">
-            <img src="{{ asset('user-assets/images/hero-section/hero-psychosocial-image.jpg') }}" alt="Mental wellness consultation">
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/66b8466c0cca4f8a7a747a06/1i4vt6728';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+<section class="wellness-hero">
+    <div class="wellness-container">
+        <!-- Background elements -->
+        <div class="wellness-background">
+            <div class="color-overlay"></div>
+            <div class="texture-overlay"></div>
+            {{-- <img src="{{ asset('user-assets/images/hero-section/hero-psychosocial-image.jpg') }}" 
+                 alt="Happy person enjoying mental wellness" 
+                 class="wellness-image"
+                 loading="eager"> --}}
         </div>
-        {{-- <div class="hero-content">
-            <h1 class="hero-title">Reclaim Your Mental Wellbeing</h1>
-            <p class="hero-subtitle">Compassionate psychosocial counseling for anxiety, depression, and life's challenges</p>
-            <div class="hero-description">
-                <p>Our expert-led therapeutic interventions build emotional resilience and lasting psychological wellness, guiding you toward a balanced, fulfilling life.</p>
+        
+        <!-- Content -->
+        <div class="wellness-content">
+            <div class="content-wrapper">
+                <h1 class="wellness-title">
+                    <span class="title-line">Find Your</span>
+                    <span class="title-line highlight">Inner Peace</span>
+                </h1>
+                
+                <p class="wellness-subtitle">Professional support for your mental health journey</p>
+                
+                <div class="wellness-description">
+                    <p>Our compassionate therapists provide personalized care to help you navigate life's challenges and discover lasting emotional balance.</p>
+                </div>
+                
+                <div class="wellness-actions">
+                    <a href="/appointment-book" class="wellness-btn primary-btn">
+                        Start Healing Today
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+                        </svg>
+                    </a>
+                    <a href="/service" class="wellness-btn secondary-btn">
+                        Our Approach
+                    </a>
+                </div>
+                
+                <div class="trust-markers">
+                    <div class="trust-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11.0026 16L6.75999 11.7574L8.17421 10.3431L11.0026 13.1716L16.6595 7.51472L18.0737 8.92893L11.0026 16Z"></path>
+                        </svg>
+                        <span>Confidential Sessions</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"></path>
+                        </svg>
+                        <span>Licensed Professionals</span>
+                    </div>
+                </div>
             </div>
-            <div class="hero-cta">
-                <a href="/appointment-book" class="btn btn-primary">Schedule a Consultation</a>
-            </div>
-        </div> --}}
+        </div>
     </div>
 </section>
 <section class="services-section">
@@ -59,7 +134,7 @@
     </div>
 </section>
 
-    {{-- <section class="counselors-section" id="our-counselors">
+     {{-- -- <section class="counselors-section" id="our-counselors">
         <div class="container">
             <div class="section-header text-center">
                 <span class="section-subtitle">Meet Our Team</span>
@@ -69,53 +144,35 @@
     
             <div class="counselors-grid">
                 <!-- Counselor 1 -->
+                @foreach($teamMembers as $teamMember)
+                {
                 <div class="counselor-card">
                     <div class="counselor-image">
-                        <img src="images/counseller/counseller1.jpeg" alt="Rabina Shahi Khadka">
-                        <div class="social-links">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        </div>
+                        <img src="{{ asset('storage/' . $teamMember->image) }}" alt="{{ $teamMember->name }}">
+                        
                     </div>
                     <div class="counselor-info">
-                        <h3 class="counselor-name">Rabina Shahi Khadka</h3>
-                        <p class="counselor-title"> Psychologist</p>
+                        <h3 class="counselor-name">{{ $teamMemberr->name }}</h3>
+                        <p class="counselor-title">Psychologist</p>
                         <p class="counselor-specialty">Trauma Recovery, Anxiety Disorders</p>
-                        <p class="counselor-description">Khadka specializes in evidence-based approaches to trauma recovery and anxiety management, with over 10 years of psychosocial experience.</p>
-                        <a href="#counselors/rabina-shahi-khadka.html" class="btn-profile">View Profile</a>
+                        <p class="counselor-description">{{ $teamMember->description }}</p>
+                        <a href="{{ url('/our-team/' . $teamMemberr->id) }}" class="btn-profile">View Profile</a>
                     </div>
                 </div>
-    
-                <!-- Counselor 2
-                <div class="counselor-card">
-                    <div class="counselor-image">
-                        <img src="images/counseller/counseller2.jpeg" alt="Michael Torres, LMFT">
-                        <div class="social-links">
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                    <div class="counselor-info">
-                        <h3 class="counselor-name">Michael Torres, LMFT</h3>
-                        <p class="counselor-title">Licensed Marriage & Family Therapist</p>
-                        <p class="counselor-specialty">Relationship Counseling, Family Systems</p>
-                        <p class="counselor-description">Michael provides compassionate support for couples and families navigating relationship challenges, transitions, and communication issues.</p>
-                        <a href="#counselors/michael-torres.html" class="btn-profile">View Profile</a>
-                    </div>
-                </div>
+            }
+                @endforeach
             </div>
-     -->
-            </div>
+                
+                
+                
             <div class="team-cta text-center">
                 <p>Our counselors are dedicated to providing personalized care tailored to your unique needs.</p>
-                <a href="#team.html" class="btn-secondary">Meet Our Full Team</a>
+                <a href="#" class="btn-secondary">Meet Our Full Team</a>
             </div>
         </div>
-    </section> --}}
+    </section>  --}}
 
-    {{-- <section class="reviews-section" id="testimonials">
+   <section class="reviews-section" id="testimonials">
         <div class="container">
             <div class="section-header text-center">
                 <span class="section-subtitle">Testimonials</span>
@@ -131,7 +188,14 @@
                             <i class="fas fa-quote-left"></i>
                         </div>
                         <div class="review-content">
-                            <p>"Working with Dr. Johnson has been transformative. I've developed coping strategies that have significantly reduced my anxiety and improved my daily life. The personalized approach and genuine care made all the difference."</p>
+                            <p>"Rabina ma’am thank you so much hajur 
+                                le mero problem haru bujera malai sakesamma 
+                                ramro solution dina khojnu vayo I have been 
+                                trying my best hajur ko genuine advice activities 
+                                haru follow garna lai  session haru lina ma ekdam 
+                                ready chu ma’am hajur ko jati session liye pani
+                                 kamai lagxa.
+                                "</p>
                         </div>
                         <div class="review-rating">
                             <i class="fas fa-star"></i>
@@ -142,11 +206,11 @@
                         </div>
                         <div class="reviewer-info">
                             <div class="reviewer-image">
-                                <img src="images/reviews_image/review.jpg" alt="Client">
+                                <img src="{{asset('user-assets/images/others/review_image.jpg')}}" alt="Client">
                             </div>
                             <div class="reviewer-details">
-                                <h4 class="reviewer-name">Rebecca M.</h4>
-                                <p class="reviewer-subtitle">Anxiety Management Client</p>
+                                <h4 class="reviewer-name">Milan Khadka</h4>
+                                <p class="reviewer-subtitle"></p>
                             </div>
                         </div>
                     </div>
@@ -157,7 +221,7 @@
                             <i class="fas fa-quote-left"></i>
                         </div>
                         <div class="review-content">
-                            <p>"The family counseling sessions helped us navigate a difficult time with our teenager. Michael's techniques improved our communication and brought us closer together. We're grateful for his guidance and support."</p>
+                            <p>"Online therapy Service has been great. Prices are fair (roughly cheaper than most other therapy services). My counsellor has been kind and helpful. Good way to find someone to talk to and at the same time, work through issues you may have. I had taken therapy for my depression, anxiety and relationhip issues. I want to take marital couneslling and want to resolve my marriage issues with marriage counselling. Looking forward for the more session."</p>
                         </div>
                         <div class="review-rating">
                             <i class="fas fa-star"></i>
@@ -168,11 +232,11 @@
                         </div>
                         <div class="reviewer-info">
                             <div class="reviewer-image">
-                                <img src="images/reviews_image/review.jpg" alt="Client">
+                                <img src="{{asset('user-assets/images/others/review_image.jpg')}}" alt="Client">
                             </div>
                             <div class="reviewer-details">
-                                <h4 class="reviewer-name">Thomas & Sarah K.</h4>
-                                <p class="reviewer-subtitle">Family Counseling Clients</p>
+                                <h4 class="reviewer-name">Honey Grg </h4>
+                                <p class="reviewer-subtitle">Online therapy Service </p>
                             </div>
                         </div>
                     </div>
@@ -183,7 +247,7 @@
                             <i class="fas fa-quote-left"></i>
                         </div>
                         <div class="review-content">
-                            <p>"After my traumatic experience, I didn't think I'd ever feel normal again. Dr. Patel's trauma-focused therapy gave me tools to process my feelings and rebuild my sense of safety. I'm finally moving forward with hope."</p>
+                            <p>"I'm very much satisfied with the first session.I'm willing to take further sessions very soon."</p>
                         </div>
                         <div class="review-rating">
                             <i class="fas fa-star"></i>
@@ -194,11 +258,11 @@
                         </div>
                         <div class="reviewer-info">
                             <div class="reviewer-image">
-                                <img src="images/reviews_image/review.jpg" alt="Client">
+                                <img src="{{asset('user-assets/images/others/review_image.jpg')}}" alt="Client">
                             </div>
                             <div class="reviewer-details">
-                                <h4 class="reviewer-name">David L.</h4>
-                                <p class="reviewer-subtitle">Trauma Recovery Client</p>
+                                <h4 class="reviewer-name">Pawan Rimal</h4>
+                                <p class="reviewer-subtitle"></p>
                             </div>
                         </div>
                     </div>
@@ -209,7 +273,7 @@
                             <i class="fas fa-quote-left"></i>
                         </div>
                         <div class="review-content">
-                            <p>"The group therapy sessions for grief have been a lifeline. Sharing with others who understand and learning from James's compassionate guidance has helped me process my loss and find strength I didn't know I had."</p>
+                            <p>"Malai lagvag 6 barsa vayo anxiety ko problem vako maile 2-3therapist haru sanga therapy counselling session haru pani lisakye tara kina ho maile mero samasya ko solution pako jasto lagthiyena .Hajur haru sanga ni maile session linu vanda aagi testai lagthiyo maile aafno problem ko solution hajur haru bata paudina hola vanera tara hajur haru treatment process ekdam different lagyo therapist mam ni ekdam specified hunuhunthiyo."</p>
                         </div>
                         <div class="review-rating">
                             <i class="fas fa-star"></i>
@@ -220,11 +284,11 @@
                         </div>
                         <div class="reviewer-info">
                             <div class="reviewer-image">
-                                <img src="images/reviews_image/review.jpg" alt="Client">
+                                <img src="{{asset('user-assets/images/others/review_image.jpg')}}" alt="Client">
                             </div>
                             <div class="reviewer-details">
-                                <h4 class="reviewer-name">Jennifer R.</h4>
-                                <p class="reviewer-subtitle">Grief Support Group Member</p>
+                                <h4 class="reviewer-name">Sujan Gautam </h4>
+                                <p class="reviewer-subtitle">Anxiety Treatment</p>
                             </div>
                         </div>
                     </div>
@@ -246,12 +310,12 @@
                 </div>
             </div>
             
-            <div class="reviews-cta text-center">
+            {{-- <div class="reviews-cta text-center">
                 <p>Join hundreds of satisfied clients who have transformed their lives through our services.</p>
                 <a href="./reviews.html" class="btn-secondary">Read More Reviews</a>
-            </div>
+            </div> --}}
         </div>
-    </section> --}}
+    </section>
 
         <!-- FAQ Section -->
         <section class="faq-section">
@@ -301,7 +365,7 @@
             </div>
         </section>
         
-        <section class="blog-section">
+        {{-- <section class="blog-section">
             <div class="container">
                 <div class="blog-title">
                     <h1>Blogs</h1>
@@ -381,7 +445,7 @@
                 
                 
             </div>
-        </section>
+        </section> --}}
 
     {{-- <section class="consultation-form-section" id="consultation">
         <div class="container">

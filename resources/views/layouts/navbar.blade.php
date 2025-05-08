@@ -9,7 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Psychosocial Counseling Services</title>
     <style>
-        /* Your existing CSS remains the same */
+        /* Custom styles for logo and brand */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            max-height: 50px;
+            margin-right: 15px;
+        }
+        
+        .brand-name {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+        }
+        
+        /* Remove default dropdown caret if using custom icon */
         .dropdown-toggle.no-caret::after {
             display: none !important;
         }
@@ -21,38 +37,43 @@
                 margin-top: 0;
             }
         }
+        
+        /* Add active state styling */
+        .nav-link.active {
+            font-weight: bold;
+            color: #0d6efd !important;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <!-- Logo Section -->
-            <div class="logo">
-                <a href="/index">
-                    <img src="{{asset('user-assets/images/logo/psychosocial_counselling_logo.jpg')}}" alt="Psychosocial Counselling Services Logo">
-                </a>
-                <h1 class="brand-name">Psychosocial Counselling Services</h1>
-            </div>
-            
-            <!-- Mobile Menu Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand d-flex align-items-center" href="/index">
+                <img src="{{asset('user-assets/images/logo/psychosocial_counselling_logo.jpg')}}" alt="Logo" style="max-height: 50px; margin-right: 10px;">
+                <span class="brand-name">Psychosocial Counselling Services</span>
+            </a>
+    
+            <!-- Toggler button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
-            <!-- Navigation Menu -->
+    
+            <!-- Collapsible content -->
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- Menu items -->
                     <li class="nav-item">
                         <a href="/index" class="nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
                     </li>
-                    
                     <li class="nav-item">
                         <a href="/about" class="nav-link {{ request()->is('about') ? 'active' : '' }}">About Us</a>
                     </li>
-                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle no-caret" href="{{route('services.index')}}" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Services <i class="fas fa-chevron-down ms-2"></i>
+                            Services <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.29289 8.79289C6.68342 8.40237 7.31658 8.40237 7.70711 8.79289L12 13.0858L16.2929 8.79289C16.6834 8.40237 17.3166 8.40237 17.7071 8.79289C18.0976 9.18342 18.0976 9.81658 17.7071 10.2071L12.7071 15.2071C12.3166 15.5976 11.6834 15.5976 11.2929 15.2071L6.29289 10.2071C5.90237 9.81658 5.90237 9.18342 6.29289 8.79289Z" fill="#000000"/>
+                                </svg>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                             @foreach($services as $service)
@@ -64,15 +85,32 @@
                             @endforeach
                         </ul>
                     </li>
-                    
                     <li class="nav-item">
-                        <a href="/blog" class="nav-link {{ request()->is('blog') ? 'active' : '' }}">Blogs</a>
+                        <a href="{{('blogs.index')}}" class="nav-link {{ request()->is('blog') ? 'active' : '' }}">Blogs</a>
                     </li>
-                    
                     <li class="nav-item">
                         <a href="/contact" class="nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact Us</a>
                     </li>
-                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle no-caret" href="#" id="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Learn More <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.29289 8.79289C6.68342 8.40237 7.31658 8.40237 7.70711 8.79289L12 13.0858L16.2929 8.79289C16.6834 8.40237 17.3166 8.40237 17.7071 8.79289C18.0976 9.18342 18.0976 9.81658 17.7071 10.2071L12.7071 15.2071C12.3166 15.5976 11.6834 15.5976 11.2929 15.2071L6.29289 10.2071C5.90237 9.81658 5.90237 9.18342 6.29289 8.79289Z" fill="#000000"/>
+                                </svg>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                           
+                            <li>
+                                <a class="dropdown-item" href="{{ route('counselors.index') }}">
+                                    Team Member
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('reviews.index') }}">
+                                    Reviews
+                                </a>
+                            
+                        </ul>
+                    </li>
                     <li class="nav-item ms-lg-3">
                         <a href="/appointment-book" class="btn btn-primary">Book Appointment</a>
                     </li>
@@ -80,29 +118,10 @@
             </div>
         </div>
     </nav>
+    
 
-    <!-- Bootstrap JS Bundle with Popper -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Optional: Custom JS for enhanced dropdown behavior -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize Bootstrap dropdowns
-        var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
-        var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
-            return new bootstrap.Dropdown(dropdownToggleEl)
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.matches('.dropdown-toggle') && !e.target.closest('.dropdown-menu')) {
-                var dropdowns = document.querySelectorAll('.dropdown-menu.show');
-                dropdowns.forEach(function(dropdown) {
-                    dropdown.classList.remove('show');
-                });
-            }
-        });
-    });
-    </script>
 </body>
 </html>
